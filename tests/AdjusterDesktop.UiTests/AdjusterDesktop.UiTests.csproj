@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="FlaUI.UIA3" Version="4.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Build the app before the UI tests run; the tests launch its exe. -->
+    <ProjectReference Include="..\..\src\AdjusterDesktop\AdjusterDesktop.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>AppExePath</_Parameter1>
+      <_Parameter2>$(MSBuildThisFileDirectory)..\..\src\AdjusterDesktop\bin\$(Configuration)\net8.0-windows\Northwind.AdjusterDesktop.exe</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+</Project>
