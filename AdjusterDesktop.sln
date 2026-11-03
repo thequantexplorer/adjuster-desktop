@@ -1,10 +1,14 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdjusterDesktop", "src\AdjusterDesktop\AdjusterDesktop.csproj", "{6E0C4B0A-0001-4A11-9C11-000000000001}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdjusterDesktop.Core", "src\AdjusterDesktop.Core\AdjusterDesktop.Core.csproj", "{6E0C4B0A-0001-4A11-9C11-000000000002}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdjusterDesktop.Core.Tests", "tests\AdjusterDesktop.Core.Tests\AdjusterDesktop.Core.Tests.csproj", "{6E0C4B0A-0001-4A11-9C11-000000000003}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0D104F39-5662-4CC9-8B4A-3F8407FA7832}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdjusterDesktop.UiTests", "tests\AdjusterDesktop.UiTests\AdjusterDesktop.UiTests.csproj", "{97085032-737D-4D8E-8DF4-238EEB230CD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +28,12 @@ Global
 		{6E0C4B0A-0001-4A11-9C11-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E0C4B0A-0001-4A11-9C11-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E0C4B0A-0001-4A11-9C11-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97085032-737D-4D8E-8DF4-238EEB230CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97085032-737D-4D8E-8DF4-238EEB230CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97085032-737D-4D8E-8DF4-238EEB230CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97085032-737D-4D8E-8DF4-238EEB230CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97085032-737D-4D8E-8DF4-238EEB230CD3} = {0D104F39-5662-4CC9-8B4A-3F8407FA7832}
 	EndGlobalSection
 EndGlobal

@@ -10,7 +10,6 @@ public static class ApprovalPolicy
 
     public static ClaimStatus Decide(Claim claim, long limitCents = AdjusterLimitCents)
     {
-        long payableDollars = claim.PayableCents / 100;
-        return payableDollars <= limitCents ? ClaimStatus.Approved : ClaimStatus.SentToSupervisor;
+        return claim.PayableCents <= limitCents ? ClaimStatus.Approved : ClaimStatus.SentToSupervisor;
     }
 }

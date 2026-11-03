@@ -12,4 +12,4 @@ jobs:
         with:
           dotnet-version: "8.0.x"
       - run: dotnet build AdjusterDesktop.sln
-      - run: dotnet test tests/AdjusterDesktop.Core.Tests --no-build
+      - run: dotnet test AdjusterDesktop.sln --no-build
