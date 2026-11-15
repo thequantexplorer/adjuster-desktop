@@ -16,7 +16,11 @@ public static class ApprovalPolicy
         ["Theft"] = 500_000, // $5,000
     };
 
-    public static ClaimStatus Decide(Claim claim) => Decide(claim, TypeLimitsCents[claim.Type]);
+    /// <summary>Claim types without their own limit use <see cref="AdjusterLimitCents"/>.</summary>
+    public static long LimitCentsFor(string claimType) =>
+        TypeLimitsCents.TryGetValue(claimType, out var limitCents) ? limitCents : AdjusterLimitCents;
+
+    public static ClaimStatus Decide(Claim claim) => Decide(claim, LimitCentsFor(claim.Type));
 
     public static ClaimStatus Decide(Claim claim, long limitCents)
     {
