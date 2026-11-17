@@ -16,6 +16,8 @@ public sealed class ClaimQueue
         return claim.Status;
     }
 
+    public void Deny(string claimId) => _claims.Single(c => c.Id == claimId).Status = ClaimStatus.Denied;
+
     public static ClaimQueue Sample() => new(new[]
     {
         new Claim { Id = "CLM-1002", Customer = "Ana Ruiz", Type = "Auto", PayableCents = 270_000 },
@@ -23,4 +25,16 @@ public sealed class ClaimQueue
         new Claim { Id = "CLM-2001", Customer = "Ben Okafor", Type = "Theft", PayableCents = 2_000_000 },
         new Claim { Id = "CLM-2004", Customer = "Sam Patel", Type = "Water damage", PayableCents = 1_230_000 },
     });
+}
+/// <summary>Reasons an adjuster can pick when denying a claim.</summary>
+public static class DenialReasons
+{
+    public static readonly IReadOnlyList<string> All = new List<string>
+    {
+        "Not covered by policy",
+        "Duplicate claim",
+        "Missing documents",
+    };
+
+    public static string At(int index) => All[index];
 }
