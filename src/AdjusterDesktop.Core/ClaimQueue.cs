@@ -8,6 +8,8 @@ public sealed class ClaimQueue
 
     public IReadOnlyList<Claim> Pending => _claims.Where(c => c.Status == ClaimStatus.InReview).ToList();
     public IReadOnlyList<Claim> All => _claims;
+    public int SupervisorQueueCount => _claims.Count(c => c.Status == ClaimStatus.SentToSupervisor);
+    public long ApprovedTotalCents => _claims.Where(c => c.Status == ClaimStatus.Approved).Sum(c => c.PayableCents / 100) * 100;
 
     public ClaimStatus Approve(string claimId)
     {
