@@ -11,6 +11,10 @@
     <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="0,16,0,0">
       <Button x:Name="ApproveButton" AutomationProperties.AutomationId="ApproveButton" Content="Approve selected claim"
               Padding="16,8" Click="Approve_Click"/>
+      <ComboBox x:Name="ReasonBox" AutomationProperties.AutomationId="ReasonBox" Width="220" Margin="16,0,0,0"
+                VerticalContentAlignment="Center"/>
+      <Button x:Name="DenyButton" AutomationProperties.AutomationId="DenyButton" Content="Deny selected claim"
+              Padding="16,8" Margin="8,0,0,0" Click="Deny_Click"/>
       <TextBlock x:Name="StatusText" AutomationProperties.AutomationId="StatusText" VerticalAlignment="Center" Margin="16,0,0,0"/>
     </StackPanel>
     <DataGrid x:Name="ClaimsGrid" AutomationProperties.AutomationId="ClaimsGrid" AutoGenerateColumns="False" IsReadOnly="True"
