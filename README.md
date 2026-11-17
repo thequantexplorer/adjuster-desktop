@@ -7,6 +7,6 @@ Windows desktop app that claims adjusters use to review and approve claims.
 
 ```powershell
 dotnet build AdjusterDesktop.sln
-dotnet test tests/AdjusterDesktop.Core.Tests
+dotnet test AdjusterDesktop.sln   # unit, integration, and WPF end-to-end UI tests
 dotnet run --project src/AdjusterDesktop
 ```
